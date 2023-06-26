@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorbacground_900"
     tools:context=".ui.Auth.LoginActivity">
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,15 +27,17 @@
             android:layout_width="match_parent"
             android:theme="@style/MaterialAlertDialog.MaterialComponents.Title.Text.CenterStacked"
             android:layout_height="wrap_content">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:background="@drawable/text_shape"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
-                android:paddingStart="0dp"
-                android:textAlignment="textStart"
-                android:background="@color/white"
-                android:layout_marginHorizontal="@dimen/_20sdp"/>
+                android:paddingStart="20dp"
+                android:id="@+id/tb_users"
+                android:textAlignment="textStart" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -47,9 +50,10 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:paddingStart="0dp"
+                android:paddingStart="20dp"
                 android:textAlignment="textStart"
-                android:background="@color/white"
+                android:id="@+id/tb_password"
+                android:background="@drawable/text_shape"
                 android:layout_marginHorizontal="@dimen/_20sdp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <TextView
@@ -59,12 +63,14 @@
             android:layout_gravity="end"
             android:layout_marginEnd="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_5sdp"
+            android:textColor="@color/green_400"
             android:layout_marginBottom="@dimen/_10sdp"/>
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp"
             android:layout_marginHorizontal="@dimen/_20sdp"
             android:text="Login"
+            android:backgroundTint="@color/colorhighlight"
             android:fontFamily="@font/poppinsbold"
             android:id="@+id/btn_login"
             android:textColor="@color/white"
@@ -78,14 +84,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/green_700"
                 android:text="No account yet?"
                 android:fontFamily="@font/poppinsregular"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Login"
+                android:text="Register"
                 android:textColor="@color/purple_500"
                 android:layout_marginStart="@dimen/_2sdp"
+                android:id="@+id/btn_to_register"
                 android:fontFamily="@font/poppinsregular"/>
         </LinearLayout>
     </LinearLayout>
