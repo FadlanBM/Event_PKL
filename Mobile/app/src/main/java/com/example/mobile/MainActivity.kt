@@ -22,9 +22,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnCreateEvent.setOnClickListener {
             startActivity(Intent(this,ShowAuthActivity::class.java))
+
         }
         binding.joinEvent.setOnClickListener {
             startActivity(Intent(this,VerifyCodeActivity::class.java))
         }
+
+
     }
 }

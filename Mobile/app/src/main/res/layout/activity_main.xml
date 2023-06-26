@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorbacground_900"
     tools:context=".MainActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,6 +29,7 @@
             android:text="Get Started"
             android:gravity="center"
             android:textSize="@dimen/_25sdp"
+            android:textColor="@color/white"
             android:fontFamily="@font/poppinsbold"/>
         <TextView
             android:layout_width="match_parent"
@@ -46,21 +50,23 @@
             app:cornerRadius="@dimen/_10sdp"
             android:id="@+id/join_event"
             android:textColor="@color/white"
-            android:backgroundTint="@color/green_700"/>
+            android:backgroundTint="@color/colorhighlight"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Or"
-            android:textSize="@dimen/_16sdp"
-            android:gravity="center_horizontal"
-            android:layout_marginHorizontal="@dimen/_10sdp"
-            android:layout_centerInParent="true"
-            android:id="@+id/Text_or_home"/>
+
+            <TextView
+                android:id="@+id/Text_or_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:gravity="center_horizontal"
+                android:text="Or"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp" />
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/_1sdp"
@@ -86,7 +92,8 @@
             android:text="Create Event"
             style="@style/Widget.Material3.Button.OutlinedButton"
             android:id="@+id/btn_create_event"
-            android:textColor="@color/gray_600"
+            android:backgroundTint="@color/colorbacground_900"
+            android:textColor="@color/colorhighlight"
             />
     </LinearLayout>
 

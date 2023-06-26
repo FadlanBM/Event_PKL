@@ -4,11 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorbacground_900"
     tools:context=".ui.formevent.FormInputPesertaActivity">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/shape"/>
         <ImageView
             android:layout_width="@dimen/_25sdp"
             android:layout_height="@dimen/_25sdp"
@@ -19,12 +16,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_125sdp"
+        android:layout_below="@id/btn_back"
         android:orientation="vertical">
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_90sdp"
+            app:lottie_rawRes="@raw/form"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Form Peserta Event"
+            android:textColor="@color/white"
             android:layout_marginTop="@dimen/_16ssp"
             android:fontFamily="@font/poppinsbold"
             android:layout_gravity="center_horizontal"
@@ -39,11 +43,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_20sdp"
-                android:background="@color/white"
+                android:background="@drawable/text_shape"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:paddingStart="1dp" />
+                android:paddingStart="@dimen/_10sdp" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -52,11 +56,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_20sdp"
-                android:background="@color/white"
+                android:background="@drawable/text_shape"
                 android:hint="Nama Lengkap"
                 android:inputType="textEmailAddress"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:paddingStart="1dp"/>
+                android:paddingStart="@dimen/_10sdp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -65,11 +69,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_20sdp"
-                android:background="@color/white"
+                android:background="@drawable/text_shape"
                 android:hint="Alamat"
                 android:inputType="textEmailAddress"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:paddingStart="1dp"/>
+                android:paddingStart="@dimen/_10sdp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -78,11 +82,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_20sdp"
-                android:background="@color/white"
+                android:background="@drawable/text_shape"
                 android:hint="Instansi"
                 android:inputType="textEmailAddress"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:paddingStart="1dp"/>
+                android:paddingStart="@dimen/_10sdp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -91,11 +95,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_20sdp"
-                android:background="@color/white"
+                android:background="@drawable/text_shape"
                 android:hint="Jabatan"
                 android:inputType="textEmailAddress"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:paddingStart="1dp"/>
+                android:paddingStart="@dimen/_10sdp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
@@ -105,9 +109,10 @@
             style="@style/Widget.Material3.Button.OutlinedButton"
             app:cornerRadius="@dimen/_10sdp"
             android:text="Send"
-            android:textSize="@dimen/_20sdp"
+            android:textSize="@dimen/_16sdp"
             android:fontFamily="@font/poppinsbold"
-            android:textColor="@color/black"
+            android:backgroundTint="@color/colorhighlight"
+            android:textColor="@color/white"/>
     </LinearLayout>
 
 </RelativeLayout>
