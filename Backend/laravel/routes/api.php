@@ -15,26 +15,3 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
-Route::group([
-
-    'middleware' => 'api',
-    'prefix' => 'auth'
-
-], function ($router) {
-
- Route::post('register',[AuthController::class,'register']);
-    Route::post('login',[AuthController::class,'login']);
-    Route::post('logout',[AuthController::class,'logout']);
-    Route::post('refresh',[AuthController::class,'refresh']);
-    Route::post('me',[AuthController::class,'me']);
-    Route::post('registermobile',[AuthController::class,'registermobile']);
-    Route::post('loginmobile',[AuthController::class,'loginmobile']);
-});
-
-Route::post('create',[EventController::class,'create']);
-// Route::post('register',[AuthController::class,'register']);
-//     Route::post('login',[AuthController::class,'login']);
-//     Route::post('logout',[AuthController::class,'logout']);
-//     Route::post('refresh',[AuthController::class,'refresh']);
-//     Route::post('me',[AuthController::class,'me']);
