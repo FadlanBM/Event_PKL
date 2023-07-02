@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\EventController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+// Route::post('register',[AuthController::class,'register']);
+//     Route::post('login',[AuthController::class,'login']);
+//     Route::post('logout',[AuthController::class,'logout']);
+//     Route::post('refresh',[AuthController::class,'refresh']);
+//     Route::post('me',[AuthController::class,'me']);
+
 
 Route::group([
 
@@ -22,7 +29,7 @@ Route::group([
 
 ], function ($router) {
 
- Route::post('register',[AuthController::class,'register']);
+    Route::post('register',[AuthController::class,'register']);
     Route::post('login',[AuthController::class,'login']);
     Route::post('logout',[AuthController::class,'logout']);
     Route::post('refresh',[AuthController::class,'refresh']);
@@ -30,8 +37,6 @@ Route::group([
 
 });
 
-// Route::post('register',[AuthController::class,'register']);
-//     Route::post('login',[AuthController::class,'login']);
-//     Route::post('logout',[AuthController::class,'logout']);
-//     Route::post('refresh',[AuthController::class,'refresh']);
-//     Route::post('me',[AuthController::class,'me']);
+Route::post('addev',[EventController::class,'addev']);
+
+
