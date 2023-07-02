@@ -21,7 +21,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnCreateEvent.setOnClickListener {
-            startActivity(Intent(this,ShowAuthActivity::class.java))
+            val sp= Preft(this)
+            if (sp.getIsLogin()){
+                startActivity(Intent(this,NavigasiActivity::class.java))
+            }else{
+                startActivity(Intent(this,ShowAuthActivity::class.java))
+            }
 
         }
         binding.joinEvent.setOnClickListener {

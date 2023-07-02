@@ -1,5 +1,8 @@
 package com.example.mobile
 
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import com.google.android.material.snackbar.Snackbar
@@ -17,7 +20,21 @@ class NavigasiActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityNavigasiBinding
-
+    override fun onBackPressed() {
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        builder.setTitle("Keluar")
+        builder.setMessage("Apakah Anda yakin ingin keluar dari menu admin?")
+        builder.setPositiveButton("Ya", DialogInterface.OnClickListener { dialog, which ->
+            startActivity(Intent(this,MainActivity::class.java))
+            finish()
+        })
+        builder.setNegativeButton("Tidak",
+            DialogInterface.OnClickListener { dialog, which ->
+                // Tambahkan kode yang ingin Anda jalankan saat pengguna menekan "Tidak"
+                dialog.dismiss() // Menutup dialog
+            })
+        builder.show()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

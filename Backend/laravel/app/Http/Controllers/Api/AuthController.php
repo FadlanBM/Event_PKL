@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use GuzzleHttp\Psr7\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -16,7 +17,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login','register']]);
+        $this->middleware('auth:api', ['except' => ['login','register','registermobile','loginmobile']]);
     }
 
     /**
@@ -111,4 +112,64 @@ class AuthController extends Controller
             'expires_in' => auth()->factory()->getTTL() * 60
         ]);
     }
+
+
+    // Api Untuk Mobile Android
+
+    public function registermobile(Request $request){
+        $validasi=Validator::make($request->all(),[
+            'name'=>'required',
+            'email'=>'required|unique:users',
+            'password'=>'required|min:6'
+        ]);
+
+        if ($validasi->fails()) {
+            return $this->error_400($validasi->errors()->all());
+        }
+
+        $user=User::create($request->all());
+        if ($user) {
+            return $this->valid_200('Berhasil Register',$user);
+        }else{
+            return $this->error_400('Gagal Login');
+        }
+    }
+
+    public function loginmobile(Request $request){
+        $validasi=Validator::make($request->all(),[
+            'email'=>'required',
+            'password'=>'required|min:6'
+        ]);
+
+        if ($validasi->fails()) {
+            return $this->error_400($validasi->errors()->all());
+        }
+
+        $user=User::where('email',$request->email)->first();
+        if ($user) {
+            if (password_verify($request->password,$user->password)) {
+                return $this->valid_200("selamat datang".$user->name,$user);
+            }
+            else{
+                return $this->error_400("Gagal Login");
+            }
+        }
+    }
+
+    public function error_400($message){
+        return  response()->json([
+            'message'=>$message,
+            'code'=> 400
+        ],400);
+    }
+
+    public function valid_200($message="Success",$data){
+        return response()->json([
+            'message'=>$message,
+            'data'=>$data,
+            'code'=>200
+        ],200);
+
+    }
+
 }

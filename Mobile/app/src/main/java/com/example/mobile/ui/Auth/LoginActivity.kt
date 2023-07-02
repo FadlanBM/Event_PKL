@@ -46,5 +46,21 @@ class LoginActivity : AppCompatActivity() {
         binding.btnToRegister.setOnClickListener {
             startActivity(Intent(this,RegisterActivity::class.java))
         }
+<<<<<<< Updated upstream
+=======
+    setData()
+    }
+
+    fun setData(){
+        viewModel.text.observe(this){
+            binding.tbUsers.setText(it)
+        }
+        binding.btnLogin.setOnClickListener {
+            val body=LoginRequest(binding.tbUsers.text.toString(),binding.tbPassword.text.toString())
+            viewModel.login(body).observe(this,{
+                
+            })
+        }
+>>>>>>> Stashed changes
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\EventController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,9 +28,11 @@ Route::group([
     Route::post('logout',[AuthController::class,'logout']);
     Route::post('refresh',[AuthController::class,'refresh']);
     Route::post('me',[AuthController::class,'me']);
-
+    Route::post('registermobile',[AuthController::class,'registermobile']);
+    Route::post('loginmobile',[AuthController::class,'loginmobile']);
 });
 
+Route::post('create',[EventController::class,'create']);
 // Route::post('register',[AuthController::class,'register']);
 //     Route::post('login',[AuthController::class,'login']);
 //     Route::post('logout',[AuthController::class,'logout']);

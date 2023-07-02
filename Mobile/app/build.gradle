@@ -65,7 +65,12 @@ dependencies {
 
     //koin
     implementation "io.insert-koin:koin-android:3.0.1"
+<<<<<<< Updated upstream
 
     //github tisto
     implementation 'com.github.TistoW:MyHelper:2.0.32'
+=======
+    implementation "io.insert-koin:koin-core:3.0.1"
+    implementation "io.insert-koin:koin-android-compat:3.0.1"
+>>>>>>> Stashed changes
 }
