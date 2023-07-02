@@ -18,11 +18,14 @@
         tools:layout="@layout/fragment_event" />
 
     <fragment
+<<<<<<< HEAD
+=======
         android:id="@+id/nav_generate"
         android:name="com.example.mobile.ui.generatelink.GenerateFragment"
         android:label="Generate Link"
         tools:layout="@layout/fragment_generate" />
     <fragment
+>>>>>>> 018adf1013fd4754b043529af95007d8b02d725e
         android:id="@+id/nav_users"
         android:name="com.example.mobile.ui.users.UsersFragment"
         android:label="Users Event"

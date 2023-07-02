@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
+=======
     android:background="@color/colorbacground_900"
+>>>>>>> 018adf1013fd4754b043529af95007d8b02d725e
     tools:context=".ui.event.EventFragment">
 
     <TextView

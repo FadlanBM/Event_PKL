@@ -36,8 +36,14 @@
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:paddingStart="20dp"
+<<<<<<< HEAD
+                android:textAlignment="textStart"
+                android:background="@drawable/text_shape"
+                android:layout_marginHorizontal="@dimen/_20sdp"/>
+=======
                 android:id="@+id/tb_users"
                 android:textAlignment="textStart" />
+>>>>>>> 018adf1013fd4754b043529af95007d8b02d725e
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -52,7 +58,10 @@
                 android:inputType="textPassword"
                 android:paddingStart="20dp"
                 android:textAlignment="textStart"
+<<<<<<< HEAD
+=======
                 android:id="@+id/tb_password"
+>>>>>>> 018adf1013fd4754b043529af95007d8b02d725e
                 android:background="@drawable/text_shape"
                 android:layout_marginHorizontal="@dimen/_20sdp"/>
         </com.google.android.material.textfield.TextInputLayout>

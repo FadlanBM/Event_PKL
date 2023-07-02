@@ -1,5 +1,8 @@
 package com.example.mobile
 
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -18,7 +21,21 @@ class NavigasiActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityNavigasiBinding
-
+    override fun onBackPressed() {
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        builder.setTitle("Keluar")
+        builder.setMessage("Apakah Anda yakin ingin keluar dari menu admin?")
+        builder.setPositiveButton("Ya", DialogInterface.OnClickListener { dialog, which ->
+            startActivity(Intent(this,MainActivity::class.java))
+            finish()
+        })
+        builder.setNegativeButton("Tidak",
+            DialogInterface.OnClickListener { dialog, which ->
+                // Tambahkan kode yang ingin Anda jalankan saat pengguna menekan "Tidak"
+                dialog.dismiss() // Menutup dialog
+            })
+        builder.show()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -38,7 +55,11 @@ class NavigasiActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
+<<<<<<< HEAD
+                R.id.nav_home, R.id.nav_event, R.id.nav_users
+=======
                 R.id.nav_home, R.id.nav_event, R.id.nav_users,R.id.nav_generate
+>>>>>>> 018adf1013fd4754b043529af95007d8b02d725e
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

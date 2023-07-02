@@ -13,10 +13,13 @@
             android:icon="@drawable/calendar_plus"
             android:title="Add Event" />
         <item
+<<<<<<< HEAD
+=======
             android:id="@+id/nav_generate"
             android:icon="@drawable/edit_link"
             android:title="Generate Link Event" />
         <item
+>>>>>>> 018adf1013fd4754b043529af95007d8b02d725e
             android:id="@+id/nav_users"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Users Event" />
