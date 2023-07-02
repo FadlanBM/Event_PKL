@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
@@ -54,11 +55,17 @@ class NavigasiActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
+<<<<<<< HEAD
                 R.id.nav_home, R.id.nav_event, R.id.nav_users
+=======
+                R.id.nav_home, R.id.nav_event, R.id.nav_users,R.id.nav_generate
+>>>>>>> 018adf1013fd4754b043529af95007d8b02d725e
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
