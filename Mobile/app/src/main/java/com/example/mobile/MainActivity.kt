@@ -3,8 +3,10 @@ package com.example.mobile
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.example.mobile.databinding.ActivityMainBinding
 import com.example.mobile.ui.formevent.VerifyCodeActivity
+import com.example.mobile.util.Preft
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,6 +30,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this,VerifyCodeActivity::class.java))
         }
 
-
+        val sp=Preft(this)
+        if (sp.getIsLogin()){
+            Log.d("TAG","True")
+        }else{
+            Log.d("TAG","false")
+        }
     }
 }
